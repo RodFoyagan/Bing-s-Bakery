@@ -557,12 +557,12 @@ html {
     .first-page p {
         /* left: -6rem;
         margin-top: 1rem; */
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         min-width: 300px;
         text-align: center;
         justify-content: center;
         margin-top: 1rem;
-        right: 20%;
+        right: 24%;
     }
 
     .first-page {
