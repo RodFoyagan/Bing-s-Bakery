@@ -547,6 +547,7 @@ html {
 
     
     .first-page h2 {
+        justify-content: center;
         text-align: center;
         /* left: -4.9rem;
         min-width: 350px; */
@@ -584,4 +585,13 @@ html {
     .navbar {
         height: 80px;
     }
+}
+@media (max-width: 410px) {
+    .first-page h2 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 15%;
+    }
+
 }
