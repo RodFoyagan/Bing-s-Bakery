@@ -593,5 +593,7 @@ html {
         display: flex;
         margin-left: 15%;
     }
-
+    .first-page p {
+        color: blue;
+    }
 }
