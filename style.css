@@ -896,11 +896,11 @@ button:active {
     }
 
     input ,textarea, #submitButton{
-        width: 380px;
+        width: 350px;
     }
 
     .form-group label {
-        margin-left: 12px;
+        margin-left: 24px;
     }
 
     .contact-details {
@@ -930,7 +930,7 @@ button:active {
 }
 
 .body-contact .error-message {
-    margin-left: 12px;
+    margin-left: 24px;
 }
 }
 
