@@ -5,6 +5,74 @@
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
+/* Animation start */
+@keyframes appear{
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.first-page {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.first-page h2 {
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+.first-page p {
+    animation: slideInFromRight ease-in-out 1.6s;
+}
+
+.second-button {
+    animation: bounceIn  ease 2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { 
+        transform: translateX(100%); /* Start from the right */
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0); /* End at the original position */
+        opacity: 1; 
+    }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+ #menu, .touch {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    animation-delay: 5s;
+}
+/* Animation Ends */
+
 html {
     scroll-behavior: smooth;
   }
@@ -228,6 +296,7 @@ html {
     padding-top: 70px;
     padding-bottom: 2rem;
     color: #6d3200;
+    transition: all 5s;
 }
 
 .body { 
