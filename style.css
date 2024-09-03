@@ -501,6 +501,7 @@ label {
     letter-spacing: 1px;
     font-weight: 600;
     display: flex;
+    width: 100%;
 }
 
 .touch {
@@ -969,7 +970,7 @@ button:active {
     }
 
     .form-group label {
-        margin-left: 24px;
+        padding-left: 24px;
     }
 
     .contact-details {
@@ -991,7 +992,8 @@ button:active {
     height: 100%;
     margin: 0px;
     padding: 0px; */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    contain: paint;
 }
 
 .check, .exclamation {
