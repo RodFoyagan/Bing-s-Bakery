@@ -540,7 +540,7 @@ html {
 #contact-us {
     /* background-color: #FCF8F3; */
     display: flex;
-    margin-left: 15%;
+    margin-left: 16%;
 }
 #submitButton {
     margin-top: 8px;
@@ -1014,7 +1014,7 @@ button:active {
     }
     .first-page h2 {
         display: flex;
-        margin-left: 19%;
+        margin-left: 15%;
     }
 
     .first-page p {
@@ -1067,9 +1067,9 @@ button:active {
         margin: 0 auto;
     }
 
-    /* .top {
-        padding-top: 3rem;
-    } */
+    .top {
+        padding-top: 70px;
+    }
 
     .touch {
         margin-top: 1rem;
