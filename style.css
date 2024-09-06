@@ -1008,9 +1008,13 @@ button:active {
     }
 }
 @media (max-width: 420px) {
+
+    .first-page {
+        text-align: center;
+    }
     .first-page h2 {
         display: flex;
-        margin-left: 0 auto;
+        width: 100%;
     }
 
     .first-page p {
@@ -1063,8 +1067,13 @@ button:active {
         margin: 0 auto;
     }
 
+    .header-title {
+        padding-top: 3rem !important;
+        margin-top: 3rem !important;
+    }
+
     .touch {
-        margin-top: -1rem;
+        margin-top: 1rem;
     }
 
     html,body{
