@@ -5,6 +5,16 @@
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
+@font-face {
+    font-family: myFont1;
+    src: url(calestic-2-font/CalesticRegular-m2oOG.ttf);
+}
+
+@font-face {
+    font-family: myFont4;
+    src: url(aesthetic-wonder-font/AestheticWonderDemoExtbd-R9Awl.ttf);
+}
+
 /* Animation start */
 @keyframes appear{
     from {
@@ -26,6 +36,10 @@
         opacity: 1;
         transform: translateX(0); /* End at the original position */
     }
+}
+
+#navbar__logo {
+    animation: bounceIn  ease 1s;
 }
 
 .first-page {
@@ -298,6 +312,7 @@ html {
     display: flex;
     margin-left: 32%;
     margin-top: -2.2rem;
+    font-family: myFont1;
     font-size: 1.5vw;
     color: #f0d1a0;
     float: left;
@@ -321,11 +336,13 @@ html {
 }
 
 #menu {
-    font-family: myFont3;
+    font-family: myFont;
     padding-top: 70px;
     padding-bottom: 2rem;
     color: #6d3200;
     transition: all 5s;
+    font-size: 3rem;
+    font-weight: 500;
 }
 
 .body { 
@@ -356,6 +373,8 @@ html {
     flex-wrap: wrap-reverse;
     justify-content: center;
     align-items: center;
+
+    
     width: 280px;
     height: auto;
     border-radius: 20px;
@@ -446,20 +465,13 @@ html {
 
 
 .touch {
-	text-align: center;
-	color: #8b5220;
-    padding-top: 2rem;
-    margin-bottom: 1rem;
-    min-width: 10rem;
-    /* -webkit-text-fill-color: transparent; */
-    /* -webkit-background-clip: text; */
-    font-family: myFont2;
-    font-size: 8vw;
-    font-weight: 200;
-    /* text-align: center; */
-    padding-top: 4rem;
-    /* text-align: left; */
-    line-height: 4rem;
+	font-family: myFont;
+    padding-top: 70px;
+    padding-bottom: 2rem;
+    color: #6d3200;
+    transition: all 5s;
+    font-size: 3rem !important;
+    font-weight: 500 !important;
 }
 
 .check {
@@ -642,14 +654,16 @@ button:active {
     /* width: 25rem; */
     font-size: 1.2rem;
     display: grid;
-    
+    /* font-family: myFont1; */
     margin-top: 15%;
     /* margin: 0 auto; */
 }
 
 .contact-details h2 {
-    color: #8b5220;
-    font-family: myFont3;
+    color: #6d3200;
+    font-family: myFont;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
 }
 
 .contact-details img {
@@ -658,11 +672,19 @@ button:active {
 }
 
 .contact-details i{
-    display: inline-block;
+    display: block;
     padding-bottom: 2rem;
 }
 .contact-details .details {
     margin-bottom: 2rem;
+}
+
+.details {
+    font-family: myFont4;
+}
+
+#num {
+    font-family: sans-serif;
 }
 
 /* to be continued */
@@ -985,16 +1007,21 @@ button:active {
         height: 80px;
     }
 }
-@media (max-width: 410px) {
+@media (max-width: 420px) {
     .first-page h2 {
-        justify-content: center;
-        align-items: center;
         display: flex;
-        margin-left: 15%;
+        margin-left: 0 auto;
     }
 
     .first-page p {
         justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 320px;
+    }
+
+    .second-button {
+        margin: 0 auto;
     }
 
     #contact-us {
@@ -1027,6 +1054,13 @@ button:active {
         text-align: center;
         margin: 0 auto;
         margin-bottom: 6px;
+    }
+
+    .contact-details img {
+        display: block;
+        /* align-items: center;
+        justify-content: center; */
+        margin: 0 auto;
     }
 
     .touch {
