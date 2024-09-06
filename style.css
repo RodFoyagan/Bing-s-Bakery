@@ -1014,7 +1014,7 @@ button:active {
     }
     .first-page h2 {
         display: flex;
-        width: 100%;
+        margin-left: 19%;
     }
 
     .first-page p {
@@ -1067,10 +1067,9 @@ button:active {
         margin: 0 auto;
     }
 
-    .header-title {
-        padding-top: 3rem !important;
-        margin-top: 3rem !important;
-    }
+    /* .top {
+        padding-top: 3rem;
+    } */
 
     .touch {
         margin-top: 1rem;
