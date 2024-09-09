@@ -83,7 +83,7 @@ function checkInputs() {
             setErrorFor(phone, "This field cannot be blank.");
             isValid = false;
         } else if (!isValidPhone(phoneValue)) {
-            setErrorFor(phone, "Phone number is not valid.");
+            setErrorFor(phone, "Phone number is invalid.");
             isValid = false;
         } else {
             setSuccessFor(phone);
@@ -93,7 +93,7 @@ function checkInputs() {
         setErrorFor(myMessage, "This field cannot be blank.");
         isValid = false;
     } else if (messageValue.length < 20 || messageValue.length > 100) {
-        setErrorFor(myMessage, "Message must be between 20 and 100 characters.");
+        setErrorFor(myMessage, "Message must between 20 to 100 characters.");
         isValid = false;
     } else{
         setSuccessFor(myMessage);

@@ -749,7 +749,7 @@ button:active {
 
 .know-more {
     font-family: myFont;
-    padding-top: 45px;
+    padding-top: 55px;
     padding-bottom: 1rem;
     color: #6d3200;
     transition: all 5s;
@@ -794,23 +794,24 @@ button:active {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    gap: 4rem;
     /* padding-top: 1rem; */
     padding-bottom: 1rem;
     background-color: #F5F7F8;
-    border-style: solid;
+    /* border-style: solid; */
     border-width: 4px;
     /* border-left: none;
     border-right: none; */
-    border-color: #8b5220;
-}
-
-.about-us-header {
-    border-bottom: none;
+    /* border-color: #8b5220; */
 }
 
 .images-icon {
-    border-top: none;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #6d3200;
+    width: 97%;
+    margin: 0 auto;
+    padding-top: 2rem;
 }
 
 .about-us-header {
@@ -834,7 +835,7 @@ button:active {
 
 .images-icon p {
     display: flex;
-    width: 140px;
+    width: 210px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -1284,17 +1285,31 @@ button:active {
     gap: 2rem;
 }
 
-.images-icon img {
+.images-icon {
     display: block;
-    height: 5rem;
-    width: 5rem;
+}
+
+.images-icon img {
+    display: inline;
+    height: 7rem;
+    width: 7rem;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 0;
+}
+
+.images-icon .myName {
+    padding-bottom: none !important;
 }
 
 .images-icon p {
-    width: 130px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .about-images {
