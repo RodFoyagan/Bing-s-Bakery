@@ -1187,6 +1187,7 @@ button:active {
         height: 80px;
     }
 }
+
 @media (max-width: 420px) {
 
     .first-page {
@@ -1275,13 +1276,25 @@ button:active {
 .bread1 {
     margin: 0 1rem;
     display: flex;
-    
     width: 280px;
     height: 400px;
     border-radius: 20px;
     overflow: hidden;
     /* position: relative; */
     gap: 2rem;
+}
+
+.images-icon img {
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.images-icon p {
+    width: 130px;
 }
 
 .about-images {
@@ -1294,6 +1307,7 @@ button:active {
     text-align: center;
     text-align: center;
     margin: 0 auto;
+    width: 290px;
 }
 
 #reverse {
@@ -1308,10 +1322,5 @@ button:active {
     animation-range: entry 0% cover 20%;
     animation-delay: 5s;
   }
-
-  .about-images p {
-    width: 290px;
-}
-
 }
 
