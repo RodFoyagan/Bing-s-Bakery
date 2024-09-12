@@ -128,6 +128,3 @@ function isValidFullName(fullName) {
     return fullNameRegex.test(fullName);
 }
 
-
-
-
