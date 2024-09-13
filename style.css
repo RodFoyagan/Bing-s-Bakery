@@ -761,16 +761,17 @@ button:active {
 }
 
 .about-images {
+    display: flex;
     margin-top: 3rem;
     margin-bottom: 2rem;
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 .about-images img{
+    display: flex;
     width: 300px;
     height: 360px;
     background-repeat: no-repeat;
@@ -780,10 +781,9 @@ button:active {
     border-color: #eec07b;
 }
 
-
-
-.about-images p {
-    width: 300px;
+.about-details {
+    display: flex;
+    width: 380px;
 }
 
 .about-us-header, .images-icon {
@@ -794,10 +794,10 @@ button:active {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 4rem;
+    /* gap: 4rem; */
     /* padding-top: 1rem; */
     padding-bottom: 1rem;
-    background-color: #F5F7F8;
+    background-color: transparent;
     /* border-style: solid; */
     border-width: 4px;
     /* border-left: none;
@@ -812,6 +812,7 @@ button:active {
     width: 97%;
     margin: 0 auto;
     padding-top: 2rem;
+    gap: 2rem;
 }
 
 .about-us-header {
@@ -820,6 +821,7 @@ button:active {
 
 .images-icon {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .images-icon img {
@@ -835,11 +837,12 @@ button:active {
 
 .images-icon p {
     display: flex;
-    width: 210px;
+    width: 280px;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding-bottom: 1rem;
+    gap: 1rem;
 }
 
 .myName {
@@ -1123,6 +1126,10 @@ button:active {
         position: relative;
         font-size: 2.5vw;
     }
+
+    /* .images-icon p {
+        width: 160px;
+    } */
 }
 
 @media screen and (max-width: 610px) {
@@ -1153,6 +1160,7 @@ button:active {
     .first-page h2 {
         justify-content: center;
         text-align: center;
+        justify-content: center;
         /* left: -4.9rem;
         min-width: 350px; */
         font-size: 3rem;
@@ -1198,11 +1206,8 @@ button:active {
         margin: 0 auto;
     }
     .first-page h2 {
-        /* display: flex; */
-        /* margin-left: 15%; */
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        display: flex;
+        margin-left: 15%;
         width: 320px;
     }
 
@@ -1321,15 +1326,33 @@ button:active {
 
     .about-images {
         display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-images img {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .about-images p {
         display: flex;
+        width: 300px;
         justify-content: center;
         text-align: center;
         text-align: center;
         margin: 0 auto;
-        width: 290px;
+        /* width: 290px; */
+    }
+
+    .about-us-header{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
     }
 
     #reverse {
