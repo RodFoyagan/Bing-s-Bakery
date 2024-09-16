@@ -104,6 +104,20 @@
     animation-delay: 5s;
   }
 
+  .contact-details {
+    animation: bounceIn linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    animation-delay: 5s;
+  }
+
+  .icon {
+    animation: bounceIn linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    animation-delay: 5s;
+  }
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -823,7 +837,7 @@ button:active {
     border-style: solid;
     border-width: 3px;
     border-color: #6d3200;
-    width: 97%;
+    width: 95%;
     margin: 0 auto;
     padding-top: 2rem;
     gap: 2rem;
@@ -910,7 +924,94 @@ button:active {
     background-color: #F5F7F8;
 }
 
+/* FOOTER */
+.body-footer {
+    background-color: rgba(0, 0, 0, .8);
+    padding: 2rem 3rem 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+.footer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    display: flex;
+    margin-top: -4.5rem;
+    margin-right: 3rem;
+    /* margin-left: -1.8rem; */
+    width: 11rem;
+    height: 11rem;
+    /* opacity: 0.9; */
+    /* image-rendering: linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.5)); */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+  }
+
+.footer-nav {
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+}
+
+.footer-nav li {
+    text-align: center;
+    padding-top: 4px;
+    display: flex;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .8);
+}
+
+.footer-nav a:hover {
+    color: #ffff;
+    text-decoration: underline;
+}
+
+.footer-icon img {
+    display: grid;
+    /* margin-top: .5rem; */
+    width: 2rem;
+    height: 2rem;
+    /* gap: 2rem; */
+}
+
+.footer-icon {
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.footer-icon a {
+    display: grid;
+}
+
+.reserve {
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .6);
+    padding-bottom: 1rem;
+    letter-spacing: 2px;
+    font-size: 2vh;
+    margin: 0 auto;
+    margin-top: 3.3rem;
+}
 
 @media (hover: none) {
     .bread-body {
@@ -1380,6 +1481,18 @@ button:active {
         animation-timeline: view();
         animation-range: entry 0% cover 22%;
         animation-delay: 5s;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+        margin-top: -4.5rem;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 1rem;
+        margin: 0 auto;
+        margin-bottom: 1rem;
     }
 
 }
