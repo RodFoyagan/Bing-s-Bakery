@@ -1360,6 +1360,11 @@ ul {
     .second-button button a:active {
         color: #332400;
     }
+
+    .second-button button a:hover {
+        background-color: transparent;
+    }
+
     .second-button {
         margin: 0 auto;
     }
