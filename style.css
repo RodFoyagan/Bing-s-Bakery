@@ -295,6 +295,10 @@ html {
     transition: all 0.3s ease;
 }
 
+.button:active {
+    background-color: #605547;
+}
+
 .second-button button a {
     position: relative;
     font-size: 2.6vw;
@@ -318,7 +322,6 @@ html {
     transition: all 0.8s ease;
     cursor: pointer;
 }
-
 
 .second-button button:hover {
     /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
@@ -1171,6 +1174,13 @@ ul {
         margin-left: 35%;
     }
 
+    .second-button button:active {
+        /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
+        background: #71634c; 
+        box-shadow: inset 400px 0 0 2px #e5d7c2;
+        color: #cbab8f;
+    }
+
     .second-button {
         margin-top: 3rem;
     }
@@ -1205,6 +1215,13 @@ ul {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+    }
+
+    .second-button button:active {
+        /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
+        background: #71634c; 
+        box-shadow: inset 400px 0 0 2px #e5d7c2;
+        color: #cbab8f;
     }
 
     .touch {
@@ -1243,6 +1260,13 @@ ul {
         font-size: 2.5vw;
     }
 
+    .second-button button:active {
+        /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
+        background: #71634c; 
+        box-shadow: inset 400px 0 0 2px #e5d7c2;
+        color: #cbab8f;
+    }
+
     /* .images-icon p {
         width: 160px;
     } */
@@ -1259,6 +1283,13 @@ ul {
         margin-left: 35%;
         width: 45%; 
         font-size: 3vw;
+    }
+
+    .second-button button:active {
+        /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
+        background: #71634c; 
+        box-shadow: inset 400px 0 0 2px #e5d7c2;
+        color: #cbab8f;
     }
 
     .second-button button a {
@@ -1299,6 +1330,13 @@ ul {
         text-align: center;
     }
 
+    .second-button button:active {
+        /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
+        background: #71634c; 
+        box-shadow: inset 400px 0 0 2px #e5d7c2;
+        color: #cbab8f;
+    }
+
     .second-button {
         padding-top: 4rem;
         justify-content: center;
@@ -1334,6 +1372,12 @@ ul {
         width: 320px;
     }
 
+    .second-button button:active {
+        /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
+        background: #71634c; 
+        box-shadow: inset 400px 0 0 2px #e5d7c2;
+        color: #cbab8f;
+    }
     .second-button {
         margin: 0 auto;
     }
