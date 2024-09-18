@@ -323,12 +323,19 @@ html {
     cursor: pointer;
 }
 
-.second-button button:hover {
-    /* box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);*/
+@media (hover: hover) {
+    .second-button button:hover {
+        background: #f0d1a0; 
+        box-shadow: inset 400px 0 0 2px #e5d7c2;
+        color: #6d3200;
+    }
+}
+
+/* .second-button button:hover {
     background: #f0d1a0; 
     box-shadow: inset 400px 0 0 2px #e5d7c2;
     color: #6d3200;
-}
+} */
 
 .second-button a {
     display: flex;
@@ -1359,10 +1366,6 @@ ul {
 
     .second-button button a:active {
         color: #332400;
-    }
-
-    .second-button button a:hover {
-        background-color: transparent;
     }
 
     .second-button {
