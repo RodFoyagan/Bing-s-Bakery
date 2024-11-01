@@ -43,7 +43,7 @@ function loadContent(){
 
 //Remove Item
 function removeItem(){
-  if(confirm('Are Your Sure to Remove')){
+  if(confirm('Are you sure about this action?')){
     let title=this.parentElement.querySelector('.cart-food-title').innerHTML;
     itemList=itemList.filter(el=>el.title!=title);
     this.parentElement.remove();
