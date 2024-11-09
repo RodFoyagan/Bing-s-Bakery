@@ -1361,15 +1361,19 @@ ul {
     }
     .first-page h2 {
         display: flex;
-        margin-left: 15%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         width: 320px;
+        min-width: auto;
     }
 
     .first-page p {
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 280px;
+        width: 320px;
+        min-width: auto;
     }
 
     .second-button button a:active {
@@ -1536,6 +1540,31 @@ ul {
         gap: 1rem;
         margin: 0 auto;
         margin-bottom: 1rem;
+    }
+    #navbar__logo{
+        font-size: 2rem;
+        margin-left: -10px;
+    }
+    /* .first-page h2{
+        display: flex;
+        font-size: 2rem;
+        min-width: auto;
+    }
+    .first-page p {
+        display: flex;
+        min-width: fit-content;
+        width: 250px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    } */
+    .second-button button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 5rem;
     }
 
 }
