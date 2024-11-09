@@ -299,15 +299,20 @@ html {
     background-color: #605547;
 }
 
+.second-button  {
+    text-decoration: none;
+}
+
 .second-button button a {
     /* position: relative; */
     font-size: 2.6vw;
+    text-decoration: none;
 }
 
 .second-button button{    
     display: flex;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-style: solid;
     border-color: #f0d1a0;
     border-radius: 50px;
@@ -1534,7 +1539,7 @@ ul {
     }
 
 }
-@media (max-width: 420px) {
+@media (max-width: 320px) {
     
     #navbar__logo{
         font-size: 2rem;
@@ -1546,19 +1551,20 @@ ul {
         min-width: auto;
     }
     .first-page p {
+        display: flex;
         min-width: fit-content;
         width: 250px;
         justify-content: center;
         align-items: center;
         text-align: center;
+        
     }
     .second-button button{
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        padding-left: 0;
-        padding-right: 0;
+        margin-top: 7rem;
     }
 }
 
