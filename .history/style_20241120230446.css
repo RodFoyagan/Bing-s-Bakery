@@ -611,6 +611,7 @@ html {
     transition: all 5s;
     font-size: 3rem;
     font-weight: 500;
+    background-image: url(images/backgrounding.jpg);
 }
 
 .body {
