@@ -86,63 +86,140 @@ return cartDetails;
 }
 
 // Listen for form submission
-cartForm.addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent the form from submitting the default way
+cartForm.addEventListener("submit", function(e) {
+e.preventDefault();  // Prevent the form from submitting the default way
 
-  const nameValue = cartFormName.value.trim();
-  const phoneValue = cartPhone.value.trim();
+const nameValue = cartFormName.value.trim();
+const phoneValue = cartPhone.value.trim();
 
-  if (nameValue && phoneValue) {
+// Validate form (ensure both fields are filled in)
+if (nameValue && phoneValue) {
+    // Get the cart items from localStorage
+    if (nameValue && phoneValue) {
+      // Get the cart items from localStorage
       let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       console.log("Loaded cart items for email:", cartItems);
-
+  
+      // Generate cart details string including total amount
       const cartDetails = generateCartDetails(cartItems);
-
+  
+      // Create an object with order details to send via EmailJS
       const orderDetails = {
           customer_name: nameValue,
           customer_phone: phoneValue,
-          cart_items: cartDetails,
+          cart_items: cartDetails // Include dynamically generated cart items with prices and total
       };
-
-      emailjs
-          .send("service_ceb9ind", "template_ngn2h5g", orderDetails)
-          .then(function (response) {
-              console.log("SUCCESS!", response.status, response.text);
-              alert("Order placed successfully!");
-
-              // Reset the cart
-              itemList = []; // Clear the in-memory list
-              localStorage.removeItem("cartItems"); // Clear localStorage
-
-              // Clear only cart items, leaving other elements intact
-              const cartContent = document.querySelector(".cart-content");
-              if (cartContent) {
-                  const cartItems = cartContent.querySelectorAll(".cart-box"); // Target only the cart items
-                  cartItems.forEach((item) => item.remove()); // Remove each cart item
-              }
-
-              // Update totals and cart count
-              const totalValue = document.querySelector(".total-price");
-              if (totalValue) totalValue.innerHTML = "₱0";
-
-              const cartCount = document.querySelector(".cart-count");
-              if (cartCount) {
-                  cartCount.innerHTML = "0";
-                  cartCount.style.display = "none"; // Hide the cart count if no items
-              }
-
-              updateTotal(); // Recalculate totals
+  
+      // Send email via EmailJS
+      emailjs.send('service_ceb9ind', 'template_ngn2h5g', orderDetails) // Replace with your service and template IDs
+          .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+              alert('Order placed successfully!');
+  
+              // Clear the cart items in localStorage
+              localStorage.removeItem("cartItems");
+  
+              // Optionally, update the UI to reflect an empty cart
+              const cartUI = document.getElementById("cart");
+              if (cartUI) cartUI.innerHTML = "<p>Your cart is now empty.</p>";
           })
-          .catch(function (err) {
-              console.log("FAILED...", err);
-              alert("There was an error placing your order. Please try again.");
+          .catch(function(err) {
+              console.log('FAILED...', err);
+              alert('There was an error placing your order. Please try again.');
           });
   } else {
       console.log("Please fill in all required fields.");
-      alert("Please fill in all fields.");
+      alert('Please fill in all fields.');
+  }
+  
+
+
+// Cart form end
+
+//Contact Form
+
+const form = document.getElementById("form");
+const fullName = document.getElementById("login-name");
+const phone = document.getElementById("login-phone");
+const myMessage = document.getElementById("login-message");
+
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // Prevent the default form submission
+  if (checkInputs()) { // Check inputs first
+  
+      // Use a timeout to ensure styles are applied before showing the alert
+      setTimeout(() => {
+          alert("Form submitted successfully!"); // Show alert
+          form.submit(); // Submit the form
+      }, 0);
   }
 });
-// Cart form end
+
+function checkInputs() {
+  const fullNameValue = fullName.value.trim();
+  const phoneValue = phone.value.trim();
+  const messageValue = myMessage.value.trim();
+  let isValid = true;
+
+  if(fullNameValue === "") {
+      setErrorFor(fullName, "This field cannot be blank.");
+      isValid= false;
+  } else if (!isValidFullName(fullNameValue)) {
+      setErrorFor(fullName, "Please provide your First and Last name.");
+      isValid = false;
+  } else {
+      setSuccessFor(fullName);
+  }
+  
+      if(phoneValue === "") {
+          setErrorFor(phone, "This field cannot be blank.");
+          isValid = false;
+      } else if (!isValidPhone(phoneValue)) {
+          setErrorFor(phone, "Phone number is invalid.");
+          isValid = false;
+      } else {
+          setSuccessFor(phone);
+      }
+  
+  if(messageValue === "") {
+      setErrorFor(myMessage, "This field cannot be blank.");
+      isValid = false;
+  } else if (messageValue.length < 20 || messageValue.length > 100) {
+      setErrorFor(myMessage, "Message must between 20 to 100 characters.");
+      isValid = false;
+  } else{
+      setSuccessFor(myMessage);
+  }
+  if (fullNameValue !== "" && isValidPhone(phoneValue) && messageValue !== "" && messageValue.length >= 10) {
+      isValid = true;
+  }
+  return isValid; // Return the validation result
+}
+
+function setErrorFor(input, message) {
+  const formControl = input.parentElement;
+  const errorMessage = formControl.querySelector("p.error-message");
+  errorMessage.innerText = message;
+  formControl.className = "form-control error";
+  errorMessage.style.visibility = "visible";
+}
+function setSuccessFor(input) {
+  const formControl = input.parentElement;
+  formControl.className = "form-control success2";
+  const errorMessage = formControl.querySelector("p.error-message");
+  errorMessage.style.visibility = "hidden";
+}
+
+function isValidPhone(phone) {
+  return /((^(\+)(\d){12}$)|(^\d{11}$))/.test(phone);
+}
+
+const fullNameRegex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i;
+
+function isValidFullName(fullName) {
+  return fullNameRegex.test(fullName);
+}
 
 // CART SECTION
 
@@ -314,122 +391,4 @@ if (count == 0) {
 } else {
   cartCount.style.display = 'block';
 }
-}
 
-//Contact Form
-
-// Initialize EmailJS with your public key
-emailjs.init("oDauPnMolACE55mNB"); // Replace with your actual public key
-
-// Get references to the form and its elements
-const form = document.getElementById("form");
-const nameInput = document.getElementById("login-name");
-const phoneInput = document.getElementById("login-phone");
-const messageInput = document.getElementById("login-message");
-
-// Listen for form submission
-form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the default form submission behavior
-
-    // Collect form values
-    const nameValue = nameInput.value.trim();
-    const phoneValue = phoneInput.value.trim();
-    const messageValue = messageInput.value.trim();
-
-    // Validate inputs (optional, can be expanded)
-    if (!nameValue || !phoneValue || !messageValue) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    // Create an object to hold the form data
-    const contactDetails = {
-        customer_name: nameValue,
-        customer_phone: phoneValue,
-        customer_message: messageValue,
-    };
-
-    // Send the email using EmailJS
-    emailjs
-        .send("service_ceb9ind", "template_i2dtafd", contactDetails)
-        .then(
-            function (response) {
-                console.log("SUCCESS!", response.status, response.text);
-                alert("Your message has been sent successfully!");
-
-                // Reset the form fields
-                form.reset();
-            },
-            function (error) {
-                console.log("FAILED...", error);
-                alert("Failed to send your message. Please try again later.");
-            }
-        );
-});
-
-
-function checkInputs() {
-  const fullNameValue = fullName.value.trim();
-  const phoneValue = phone.value.trim();
-  const messageValue = myMessage.value.trim();
-  let isValid = true;
-  
-
-  if(fullNameValue === "") {
-      setErrorFor(fullName, "This field cannot be blank.");
-      isValid= false;
-  } else if (!isValidFullName(fullNameValue)) {
-      setErrorFor(fullName, "Please provide your First and Last name.");
-      isValid = false;
-  } else {
-      setSuccessFor(fullName);
-  }
-  
-      if(phoneValue === "") {
-          setErrorFor(phone, "This field cannot be blank.");
-          isValid = false;
-      } else if (!isValidPhone(phoneValue)) {
-          setErrorFor(phone, "Phone number is invalid.");
-          isValid = false;
-      } else {
-          setSuccessFor(phone);
-      }
-  
-  if(messageValue === "") {
-      setErrorFor(myMessage, "This field cannot be blank.");
-      isValid = false;
-  } else if (messageValue.length < 20 || messageValue.length > 100) {
-      setErrorFor(myMessage, "Message must between 20 to 100 characters.");
-      isValid = false;
-  } else{
-      setSuccessFor(myMessage);
-  }
-  if (fullNameValue !== "" && isValidPhone(phoneValue) && messageValue !== "" && messageValue.length >= 10) {
-      isValid = true;
-  }
-  return isValid; // Return the validation result
-}
-
-function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const errorMessage = formControl.querySelector("p.error-message");
-  errorMessage.innerText = message;
-  formControl.className = "form-control error";
-  errorMessage.style.visibility = "visible";
-}
-function setSuccessFor(input) {
-  const formControl = input.parentElement;
-  formControl.className = "form-control success2";
-  const errorMessage = formControl.querySelector("p.error-message");
-  errorMessage.style.visibility = "hidden";
-}
-
-function isValidPhone(phone) {
-  return /((^(\+)(\d){12}$)|(^\d{11}$))/.test(phone);
-}
-
-const fullNameRegex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i;
-
-function isValidFullName(fullName) {
-  return fullNameRegex.test(fullName);
-}

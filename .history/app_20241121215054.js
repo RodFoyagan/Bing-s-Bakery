@@ -318,60 +318,50 @@ if (count == 0) {
 
 //Contact Form
 
-// Initialize EmailJS with your public key
-emailjs.init("oDauPnMolACE55mNB"); // Replace with your actual public key
-
-// Get references to the form and its elements
 const form = document.getElementById("form");
-const nameInput = document.getElementById("login-name");
-const phoneInput = document.getElementById("login-phone");
-const messageInput = document.getElementById("login-message");
+const fullName = document.getElementById("login-name");
+const phone = document.getElementById("login-phone");
+const myMessage = document.getElementById("login-message");
 
-// Listen for form submission
-form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the default form submission behavior
-
-    // Collect form values
-    const nameValue = nameInput.value.trim();
-    const phoneValue = phoneInput.value.trim();
-    const messageValue = messageInput.value.trim();
-
-    // Validate inputs (optional, can be expanded)
-    if (!nameValue || !phoneValue || !messageValue) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    // Create an object to hold the form data
-    const contactDetails = {
-        customer_name: nameValue,
-        customer_phone: phoneValue,
-        customer_message: messageValue,
-    };
-
-    // Send the email using EmailJS
-    emailjs
-        .send("service_ceb9ind", "template_i2dtafd", contactDetails)
-        .then(
-            function (response) {
-                console.log("SUCCESS!", response.status, response.text);
-                alert("Your message has been sent successfully!");
-
-                // Reset the form fields
-                form.reset();
-            },
-            function (error) {
-                console.log("FAILED...", error);
-                alert("Failed to send your message. Please try again later.");
-            }
-        );
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // Prevent the default form submission
+  if (checkInputs()) { // Check inputs first
+  
+      // Use a timeout to ensure styles are applied before showing the alert
+      setTimeout(() => {
+          alert("Form submitted successfully!"); // Show alert
+          form.submit(); // Submit the form
+      }, 0);
+  }
 });
 
-
 function checkInputs() {
-  const fullNameValue = fullName.value.trim();
-  const phoneValue = phone.value.trim();
-  const messageValue = myMessage.value.trim();
+  // Example data from a form
+const nameValue = document.getElementById("name").value.trim();
+const phoneValue = document.getElementById("phone").value.trim();
+const messageValue = document.getElementById("message").value.trim();
+
+// Object with order details to send via EmailJS
+const contactDetails = {
+    customer_name: nameValue,
+    customer_phone: phoneValue,
+    customer_message: messageValue,
+};
+
+// Sending email via EmailJS
+emailjs
+    .send("your_service_id", "your_template_id", contactDetails)
+    .then(
+        function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("Message sent successfully!");
+        },
+        function (error) {
+            console.log("FAILED...", error);
+            alert("There was an error sending your message. Please try again.");
+        }
+    );
+
   let isValid = true;
   
 

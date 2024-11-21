@@ -351,7 +351,7 @@ form.addEventListener("submit", function (e) {
 
     // Send the email using EmailJS
     emailjs
-        .send("service_ceb9ind", "template_i2dtafd", contactDetails)
+        .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", contactDetails)
         .then(
             function (response) {
                 console.log("SUCCESS!", response.status, response.text);

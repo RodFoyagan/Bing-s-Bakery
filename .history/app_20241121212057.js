@@ -92,46 +92,56 @@ cartForm.addEventListener("submit", function (e) {
   const nameValue = cartFormName.value.trim();
   const phoneValue = cartPhone.value.trim();
 
+  // Validate form (ensure both fields are filled in)
   if (nameValue && phoneValue) {
+      // Get the cart items from localStorage
       let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       console.log("Loaded cart items for email:", cartItems);
 
+      // Generate cart details string including total amount
       const cartDetails = generateCartDetails(cartItems);
 
+      // Create an object with order details to send via EmailJS
       const orderDetails = {
           customer_name: nameValue,
           customer_phone: phoneValue,
-          cart_items: cartDetails,
+          cart_items: cartDetails, // Include dynamically generated cart items with prices and total
       };
 
+      // Send email via EmailJS
       emailjs
-          .send("service_ceb9ind", "template_ngn2h5g", orderDetails)
+          .send("service_ceb9ind", "template_ngn2h5g", orderDetails) // Replace with your service and template IDs
           .then(function (response) {
               console.log("SUCCESS!", response.status, response.text);
               alert("Order placed successfully!");
 
-              // Reset the cart
-              itemList = []; // Clear the in-memory list
+              // Reset the cart to zero
+              itemList = []; // Clear the cart array
               localStorage.removeItem("cartItems"); // Clear localStorage
 
-              // Clear only cart items, leaving other elements intact
+              // Clear the cart UI
               const cartContent = document.querySelector(".cart-content");
               if (cartContent) {
-                  const cartItems = cartContent.querySelectorAll(".cart-box"); // Target only the cart items
-                  cartItems.forEach((item) => item.remove()); // Remove each cart item
-              }
-
-              // Update totals and cart count
+                // Remove only the cart items, not the close button or other UI elements
+                cartContent.innerHTML = ""; 
+            }
+            
+            // Ensure the close button remains intact
+            const cartCloseButton = document.querySelector("#cart-close");
+            if (cartCloseButton) {
+                cartCloseButton.style.display = "block"; // Ensure the close button is visible
+            }
+              // Update the total price and count display
               const totalValue = document.querySelector(".total-price");
               if (totalValue) totalValue.innerHTML = "₱0";
 
               const cartCount = document.querySelector(".cart-count");
               if (cartCount) {
                   cartCount.innerHTML = "0";
-                  cartCount.style.display = "none"; // Hide the cart count if no items
+                  cartCount.style.display = "none"; // Hide cart count icon if empty
               }
 
-              updateTotal(); // Recalculate totals
+              updateTotal(); // Ensure totals are recalculated
           })
           .catch(function (err) {
               console.log("FAILED...", err);
@@ -142,6 +152,9 @@ cartForm.addEventListener("submit", function (e) {
       alert("Please fill in all fields.");
   }
 });
+
+
+
 // Cart form end
 
 // CART SECTION
@@ -318,62 +331,29 @@ if (count == 0) {
 
 //Contact Form
 
-// Initialize EmailJS with your public key
-emailjs.init("oDauPnMolACE55mNB"); // Replace with your actual public key
-
-// Get references to the form and its elements
 const form = document.getElementById("form");
-const nameInput = document.getElementById("login-name");
-const phoneInput = document.getElementById("login-phone");
-const messageInput = document.getElementById("login-message");
+const fullName = document.getElementById("login-name");
+const phone = document.getElementById("login-phone");
+const myMessage = document.getElementById("login-message");
 
-// Listen for form submission
-form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the default form submission behavior
 
-    // Collect form values
-    const nameValue = nameInput.value.trim();
-    const phoneValue = phoneInput.value.trim();
-    const messageValue = messageInput.value.trim();
-
-    // Validate inputs (optional, can be expanded)
-    if (!nameValue || !phoneValue || !messageValue) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    // Create an object to hold the form data
-    const contactDetails = {
-        customer_name: nameValue,
-        customer_phone: phoneValue,
-        customer_message: messageValue,
-    };
-
-    // Send the email using EmailJS
-    emailjs
-        .send("service_ceb9ind", "template_i2dtafd", contactDetails)
-        .then(
-            function (response) {
-                console.log("SUCCESS!", response.status, response.text);
-                alert("Your message has been sent successfully!");
-
-                // Reset the form fields
-                form.reset();
-            },
-            function (error) {
-                console.log("FAILED...", error);
-                alert("Failed to send your message. Please try again later.");
-            }
-        );
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // Prevent the default form submission
+  if (checkInputs()) { // Check inputs first
+  
+      // Use a timeout to ensure styles are applied before showing the alert
+      setTimeout(() => {
+          alert("Form submitted successfully!"); // Show alert
+          form.submit(); // Submit the form
+      }, 0);
+  }
 });
-
 
 function checkInputs() {
   const fullNameValue = fullName.value.trim();
   const phoneValue = phone.value.trim();
   const messageValue = myMessage.value.trim();
   let isValid = true;
-  
 
   if(fullNameValue === "") {
       setErrorFor(fullName, "This field cannot be blank.");
