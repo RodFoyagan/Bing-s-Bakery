@@ -323,107 +323,116 @@ emailjs.init("oDauPnMolACE55mNB"); // Replace with your actual public key
 
 // Get references to the form and its elements
 const form = document.getElementById("form");
-const fullName = document.getElementById("login-name");
-const phone = document.getElementById("login-phone");
-const myMessage = document.getElementById("login-message");
+const nameInput = document.getElementById("login-name");
+const phoneInput = document.getElementById("login-phone");
+const messageInput = document.getElementById("login-message");
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent the default form submission
-    if (checkInputs()) { // Check inputs first
-        // Collect form values
-        const fullNameValue = fullName.value.trim();
-        const phoneValue = phone.value.trim();
-        const messageValue = myMessage.value.trim();
+// Listen for form submission
+form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
 
-        // Create an object to hold the form data
-        const contactDetails = {
-            customer_name: fullNameValue,
-            customer_phone: phoneValue,
-            customer_message: messageValue,
-        };
-
-        // Send the email using EmailJS
-        emailjs.send("service_ceb9ind", "template_i2dtafd", contactDetails)
-            .then(
-                function (response) {
-                    console.log("SUCCESS!", response.status, response.text);
-                    alert("Your message has been sent successfully!");
-
-                    // Reset the form fields
-                    form.reset();
-                },
-                function (error) {
-                    console.log("FAILED...", error);
-                    alert("Failed to send your message. Please try again later.");
-                }
-            );
-
-        // Use a timeout to ensure styles are applied before showing the alert
-        setTimeout(() => {
-            alert("Form submitted successfully!"); // Show alert after submission
-        }, 0);
+    // Validate inputs before proceeding
+    if (!checkInputs()) {
+        return; // Stop if validation fails
     }
+
+    // Collect form values
+    const nameValue = nameInput.value.trim();
+    const phoneValue = phoneInput.value.trim();
+    const messageValue = messageInput.value.trim();
+
+    // Create an object to hold the form data
+    const contactDetails = {
+        customer_name: nameValue,
+        customer_phone: phoneValue,
+        customer_message: messageValue,
+    };
+
+    // Send the email using EmailJS
+    emailjs
+        .send("service_ceb9ind", "template_i2dtafd", contactDetails)
+        .then(
+            function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Your message has been sent successfully!");
+
+                // Reset the form fields
+                form.reset();
+            },
+            function (error) {
+                console.log("FAILED...", error);
+                alert("Failed to send your message. Please try again later.");
+            }
+        );
 });
 
+// Function to check inputs and validate them
 function checkInputs() {
-    const fullNameValue = fullName.value.trim();
-    const phoneValue = phone.value.trim();
-    const messageValue = myMessage.value.trim();
+    const nameValue = nameInput.value.trim();
+    const phoneValue = phoneInput.value.trim();
+    const messageValue = messageInput.value.trim();
     let isValid = true;
 
-    if (fullNameValue === "") {
-        setErrorFor(fullName, "This field cannot be blank.");
+    // Validate name
+    if (nameValue === "") {
+        setErrorFor(nameInput, "This field cannot be empty.");
         isValid = false;
-    } else if (!isValidFullName(fullNameValue)) {
-        setErrorFor(fullName, "Please provide your First and Last name.");
+    } else if (!isValidFullName(nameValue)) {
+        setErrorFor(nameInput, "Please provide your First and Last name.");
         isValid = false;
     } else {
-        setSuccessFor(fullName);
+        setSuccessFor(nameInput);
     }
 
+    // Validate phone
     if (phoneValue === "") {
-        setErrorFor(phone, "This field cannot be blank.");
+        setErrorFor(phoneInput, "This field cannot be empty.");
         isValid = false;
     } else if (!isValidPhone(phoneValue)) {
-        setErrorFor(phone, "Phone number is invalid.");
+        setErrorFor(phoneInput, "Invalid phone number.");
         isValid = false;
     } else {
-        setSuccessFor(phone);
+        setSuccessFor(phoneInput);
     }
 
+    // Validate message
     if (messageValue === "") {
-        setErrorFor(myMessage, "This field cannot be blank.");
+        setErrorFor(messageInput, "This field cannot be empty.");
         isValid = false;
     } else if (messageValue.length < 20 || messageValue.length > 100) {
-        setErrorFor(myMessage, "Message must be between 20 to 100 characters.");
+        setErrorFor(messageInput, "Message must be between 20 to 100 characters.");
         isValid = false;
     } else {
-        setSuccessFor(myMessage);
+        setSuccessFor(messageInput);
     }
 
-    return isValid; // Return the validation result
+    return isValid;
 }
 
+// Function to display error messages
 function setErrorFor(input, message) {
     const formControl = input.parentElement;
     const errorMessage = formControl.querySelector("p.error-message");
     errorMessage.innerText = message;
-    formControl.className = "form-control error";
-    errorMessage.style.visibility = "visible";
+    formControl.className = "form-control error"; // Add error class to style input
+    errorMessage.style.visibility = "visible";  // Show the error message
 }
 
+// Function to hide error messages and style inputs as valid
 function setSuccessFor(input) {
     const formControl = input.parentElement;
-    formControl.className = "form-control success";
+    formControl.className = "form-control success"; // Add success class to style input
     const errorMessage = formControl.querySelector("p.error-message");
-    errorMessage.style.visibility = "hidden";
+    errorMessage.style.visibility = "hidden";  // Hide the error message
 }
 
+// Function to validate phone number
 function isValidPhone(phone) {
     return /((^(\+)(\d){12}$)|(^\d{11}$))/.test(phone);
 }
 
-const fullNameRegex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i;
+// Regex to validate full name (first and last name)
+const fullNameRegex = /^([A-Za-zÀ-ÿ]{3,})+\s+([A-Za-zÀ-ÿ\s'-]{3,})+$/i;
 
 function isValidFullName(fullName) {
     return fullNameRegex.test(fullName);

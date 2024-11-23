@@ -902,7 +902,7 @@ button:active {
 }
 
 .body-contact {
-    background-color: #e5d7c2;
+    background-color: whitesmoke;
     max-width: 100%;
 	/* display: grid; */
 	/* grid-template-columns: 1fr 1fr; */
@@ -924,7 +924,7 @@ button:active {
     font-size: 1.2rem;
     display: grid;
     /* font-family: myFont1; */
-    margin-top: 15%;
+    margin-top: 10%;
     /* margin: 0 auto; */
 }
 
@@ -963,7 +963,7 @@ button:active {
     font-size: 20px;
 }
 
-.contact-details .details { 
+.contact-details .details {
     display: inline-block;
     vertical-align: middle;
     margin-left: 5px;

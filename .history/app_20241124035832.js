@@ -318,49 +318,20 @@ if (count == 0) {
 
 //Contact Form
 
-// Initialize EmailJS with your public key
-emailjs.init("oDauPnMolACE55mNB"); // Replace with your actual public key
-
-// Get references to the form and its elements
-const form = document.getElementById("form");
+onst form = document.getElementById("form");
 const fullName = document.getElementById("login-name");
 const phone = document.getElementById("login-phone");
 const myMessage = document.getElementById("login-message");
 
+
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent the default form submission
     if (checkInputs()) { // Check inputs first
-        // Collect form values
-        const fullNameValue = fullName.value.trim();
-        const phoneValue = phone.value.trim();
-        const messageValue = myMessage.value.trim();
-
-        // Create an object to hold the form data
-        const contactDetails = {
-            customer_name: fullNameValue,
-            customer_phone: phoneValue,
-            customer_message: messageValue,
-        };
-
-        // Send the email using EmailJS
-        emailjs.send("service_ceb9ind", "template_i2dtafd", contactDetails)
-            .then(
-                function (response) {
-                    console.log("SUCCESS!", response.status, response.text);
-                    alert("Your message has been sent successfully!");
-
-                    // Reset the form fields
-                    form.reset();
-                },
-                function (error) {
-                    console.log("FAILED...", error);
-                    alert("Failed to send your message. Please try again later.");
-                }
-            );
-
+    
         // Use a timeout to ensure styles are applied before showing the alert
         setTimeout(() => {
-            alert("Form submitted successfully!"); // Show alert after submission
+            alert("Form submitted successfully!"); // Show alert
+            form.submit(); // Submit the form
         }, 0);
     }
 });
@@ -371,36 +342,38 @@ function checkInputs() {
     const messageValue = myMessage.value.trim();
     let isValid = true;
 
-    if (fullNameValue === "") {
+    if(fullNameValue === "") {
         setErrorFor(fullName, "This field cannot be blank.");
-        isValid = false;
+        isValid= false;
     } else if (!isValidFullName(fullNameValue)) {
         setErrorFor(fullName, "Please provide your First and Last name.");
         isValid = false;
     } else {
         setSuccessFor(fullName);
     }
-
-    if (phoneValue === "") {
-        setErrorFor(phone, "This field cannot be blank.");
-        isValid = false;
-    } else if (!isValidPhone(phoneValue)) {
-        setErrorFor(phone, "Phone number is invalid.");
-        isValid = false;
-    } else {
-        setSuccessFor(phone);
-    }
-
-    if (messageValue === "") {
+    
+        if(phoneValue === "") {
+            setErrorFor(phone, "This field cannot be blank.");
+            isValid = false;
+        } else if (!isValidPhone(phoneValue)) {
+            setErrorFor(phone, "Phone number is invalid.");
+            isValid = false;
+        } else {
+            setSuccessFor(phone);
+        }
+    
+    if(messageValue === "") {
         setErrorFor(myMessage, "This field cannot be blank.");
         isValid = false;
     } else if (messageValue.length < 20 || messageValue.length > 100) {
-        setErrorFor(myMessage, "Message must be between 20 to 100 characters.");
+        setErrorFor(myMessage, "Message must between 20 to 100 characters.");
         isValid = false;
-    } else {
+    } else{
         setSuccessFor(myMessage);
     }
-
+    if (fullNameValue !== "" && isValidPhone(phoneValue) && messageValue !== "" && messageValue.length >= 10) {
+        isValid = true;
+    }
     return isValid; // Return the validation result
 }
 
@@ -411,7 +384,6 @@ function setErrorFor(input, message) {
     formControl.className = "form-control error";
     errorMessage.style.visibility = "visible";
 }
-
 function setSuccessFor(input) {
     const formControl = input.parentElement;
     formControl.className = "form-control success";
@@ -428,3 +400,4 @@ const fullNameRegex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i;
 function isValidFullName(fullName) {
     return fullNameRegex.test(fullName);
 }
+
