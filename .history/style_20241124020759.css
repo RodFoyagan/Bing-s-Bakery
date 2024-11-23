@@ -51,7 +51,6 @@
 
 /* cart Form start */
 /* General Styling for Cart Form Inputs */
-
 .cart-form {
     padding: 8px 6px;
     border-width: 1px;
@@ -234,7 +233,7 @@
   }
 
 /* Add to cart */
-#navbar__logo, .second-button button {
+#navbar__logo {
     animation: bounceIn  ease 1s;
 }
 
@@ -282,7 +281,7 @@
     animation-delay: 5s;
   }
 
-  #menu, .about-details, .about-us-header {
+  #menu, .about-details {
     animation: bounceIn linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
@@ -902,7 +901,7 @@ button:active {
 }
 
 .body-contact {
-    background-color: whitesmoke;
+    background-color: #e5d7c2;
     max-width: 100%;
 	/* display: grid; */
 	/* grid-template-columns: 1fr 1fr; */
@@ -1126,10 +1125,8 @@ button:active {
     /* margin-top: 1rem; */
     padding-top: 2rem;
     /* background-color: #F5F7F8; */
-    background-image: url(images/backgrounding.jpg);
+    background-image: url(images/background4.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 /* FOOTER */
@@ -1374,8 +1371,8 @@ transform: scale(1.5);
   overflow-x: hidden;
   padding: 20px;
   
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
   box-shadow: 0 5px 14px rgba(40, 37, 37, 0.8);
   z-index: 100;
 }
@@ -1511,8 +1508,8 @@ transform: scale(1.5);
     }
 
     .cart{
-        background: rgba(255, 255, 255, .7);
-        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, .9);
+        backdrop-filter: blur(15px);
         box-shadow: 0 5px 14px rgba(40, 37, 37, 0.6);
     }
     

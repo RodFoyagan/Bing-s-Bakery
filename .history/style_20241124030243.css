@@ -1515,6 +1515,10 @@ transform: scale(1.5);
         backdrop-filter: blur(20px);
         box-shadow: 0 5px 14px rgba(40, 37, 37, 0.6);
     }
+
+    input {
+        background-color: #0000EE;
+    }
     
     .navbar {
         position: sticky;
