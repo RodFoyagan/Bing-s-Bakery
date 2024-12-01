@@ -615,6 +615,9 @@ html {
     font-weight: 500;
 }
 
+#menu, .body {
+    background-color: #e6d7c2;
+}
 
 .body {
     display: flex;
@@ -904,6 +907,7 @@ button:active {
 }
 
 .body-contact {
+    background-color: #e5d7c2;
     max-width: 100%;
 	/* display: grid; */
 	/* grid-template-columns: 1fr 1fr; */
@@ -1033,14 +1037,12 @@ button:active {
     /* padding-top: 1rem; */
     padding-bottom: 1rem;
     background-color: transparent;
-    /* border-style: solid; */
-    border-width: 4px;
-    /* border-left: none;
-    border-right: none; */
-    /* border-color: #8b5220; */
 }
 
 .images-icon {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #6d3200;
     width: 95%;
     margin: 0 auto;
     padding-top: 2rem;

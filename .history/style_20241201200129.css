@@ -615,7 +615,6 @@ html {
     font-weight: 500;
 }
 
-
 .body {
     display: flex;
     flex-wrap: wrap;
@@ -625,7 +624,7 @@ html {
     column-gap: 2rem;
     justify-content: center;
     align-items: center;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .bread {
@@ -904,6 +903,7 @@ button:active {
 }
 
 .body-contact {
+    background-color: #e5d7c2;
     max-width: 100%;
 	/* display: grid; */
 	/* grid-template-columns: 1fr 1fr; */
@@ -985,7 +985,7 @@ button:active {
     font-family: myFont;
     padding-top: 55px;
     padding-bottom: 1rem;
-    color: whitesmoke;
+    color: #6d3200;
     transition: all 5s;
     font-size: 3rem !important;
     font-weight: 500 !important;
@@ -1018,7 +1018,6 @@ button:active {
 .about-details {
     display: flex;
     width: 380px;
-    color: whitesmoke;
 }
 
 .about-us-header, .images-icon {
@@ -1041,6 +1040,9 @@ button:active {
 }
 
 .images-icon {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #6d3200;
     width: 95%;
     margin: 0 auto;
     padding-top: 2rem;
@@ -1075,14 +1077,12 @@ button:active {
     text-align: center;
     padding-bottom: 1rem;
     gap: 1rem;
-    color: rgba(255, 255, 255, .8);
 }
 
 .myName {
     display: flex;
     margin-bottom: 3px;
     font-weight: 600;
-    color: rgba(255, 255, 255, .8);
 }
 
 .location-address {
@@ -1130,13 +1130,13 @@ button:active {
     /* background-image: url(images/background3-min.webp);
     background-repeat: no-repeat;
     background-size: cover; */
-    background-color: #362e26;
+    background-color: #45403b;
     background-position: center;
 }
 
 /* FOOTER */
 .body-footer {
-    background-color: #362e26;
+    background-color: rgba(0, 0, 0, .8);
     padding: 2rem 3rem 0 3rem;
     display: flex;
     flex-wrap: wrap;
