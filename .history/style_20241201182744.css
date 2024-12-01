@@ -497,8 +497,8 @@ html {
     text-decoration: none;
 }
 
-.second-button button{
-    display: flex;
+.second-button a{
+    /* display: flex; */
     text-decoration: none;
     padding: 10px 30px;
     border-style: solid;
@@ -534,7 +534,7 @@ html {
 } */
 
 .second-button a {
-    /* display: flex; */
+    display: flex;
     color: #eec07b;
     text-decoration: none;
     cursor: pointer;

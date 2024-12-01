@@ -534,7 +534,7 @@ html {
 } */
 
 .second-button a {
-    /* display: flex; */
+    display: flex;
     color: #eec07b;
     text-decoration: none;
     cursor: pointer;

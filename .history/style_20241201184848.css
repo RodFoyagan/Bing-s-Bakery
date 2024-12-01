@@ -497,7 +497,7 @@ html {
     text-decoration: none;
 }
 
-.second-button button{
+.second-button {
     display: flex;
     text-decoration: none;
     padding: 10px 30px;

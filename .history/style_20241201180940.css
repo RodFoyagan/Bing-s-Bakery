@@ -498,7 +498,7 @@ html {
 }
 
 .second-button button{
-    display: flex;
+    /* display: flex; */
     text-decoration: none;
     padding: 10px 30px;
     border-style: solid;
@@ -511,8 +511,7 @@ html {
     font-weight: 700;
     font-size: 2rem;
     color: #eec07b;
-    /* max-width: 20%;  
-    min-width: none;  */
+    min-width: fit-content;
     height: 3.8rem;
     /* box-shadow: 0 0 15px 1px rgba(255, 255, 255, 0.3); */
     transition: all 0.8s ease;
@@ -534,7 +533,7 @@ html {
 } */
 
 .second-button a {
-    /* display: flex; */
+    display: flex;
     color: #eec07b;
     text-decoration: none;
     cursor: pointer;
