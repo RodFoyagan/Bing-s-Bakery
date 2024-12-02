@@ -970,7 +970,7 @@ button:active {
     border-style: solid;
     border-width: 3px;
     border-color: #eec07b;
-    border-radius: 8px;
+    border-radius: 8;
 }
 
 .about-details {
