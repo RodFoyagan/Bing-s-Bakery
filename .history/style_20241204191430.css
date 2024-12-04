@@ -1936,7 +1936,7 @@ transform: scale(1.5);
         margin: 0 auto;
     }
 
-    .bread-img {
+    .bread {
         animation: bounceIn linear;
         animation-timeline: view();
         animation-range: entry 0% cover 10%;
