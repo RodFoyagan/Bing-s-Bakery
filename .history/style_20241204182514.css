@@ -1663,7 +1663,6 @@ transform: scale(1.5);
 }
 @media screen and (max-width: 755px) {
     .about-images img {
-        display: flex;
         height: 260px;
         width: 180px;
     }

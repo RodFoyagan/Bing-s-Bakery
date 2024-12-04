@@ -292,7 +292,7 @@
   .contact-details, .bread, a .button {
     animation: bounceIn linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 20%;
+    animation-range: entry 0% cover 40%;
     animation-delay: 5s;
   }
 
@@ -335,12 +335,31 @@
     }
 }
 
+/* #bread1{
+    transition: all .2s ease-in-out;
+}
+#bread2{
+    transition: all .3s ease-in-out;
+}
+#bread3{
+    transition: all .4s ease-in-out;
+} */
+
  .touch {
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
     animation-delay: 2s;
 }
+
+/* .bread1 {
+    animation: appearReverse linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    animation-delay: 5s;
+} */
+
+/* Animation Ends */
 
 html {
     scroll-behavior: smooth;
@@ -1435,6 +1454,7 @@ transform: scale(1.5);
     }
 
     .bread-img {
+
     transform: scale(1.1) translateY(-20px);
     filter:brightness(65%)
     }
@@ -1660,14 +1680,6 @@ transform: scale(1.5);
         text-align: center;
         margin: 0 auto;
     }
-}
-@media screen and (max-width: 755px) {
-    .about-images img {
-        display: flex;
-        height: 260px;
-        width: 180px;
-    }
-
 }
 
 @media screen and (max-width: 735px) {

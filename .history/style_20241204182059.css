@@ -292,7 +292,7 @@
   .contact-details, .bread, a .button {
     animation: bounceIn linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 20%;
+    animation-range: entry 0% cover 30%;
     animation-delay: 5s;
   }
 
@@ -1660,14 +1660,6 @@ transform: scale(1.5);
         text-align: center;
         margin: 0 auto;
     }
-}
-@media screen and (max-width: 755px) {
-    .about-images img {
-        display: flex;
-        height: 260px;
-        width: 180px;
-    }
-
 }
 
 @media screen and (max-width: 735px) {
