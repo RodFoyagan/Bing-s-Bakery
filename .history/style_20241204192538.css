@@ -1779,7 +1779,7 @@ transform: scale(1.5);
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 425px) {
 
     .cart {
         height: 100vh;
@@ -1939,7 +1939,7 @@ transform: scale(1.5);
     .bread img{
         animation: bounceIn linear;
         animation-timeline: view();
-        animation-range: entry 20% cover 50%;
+        animation-range: entry 10% cover 80%;
         animation-delay: 5s;
       }
 
