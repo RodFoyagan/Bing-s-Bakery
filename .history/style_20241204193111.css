@@ -569,9 +569,9 @@ html {
 }
 
 /* Menu Page */
-.menu-title {
+.header-title {
     font-family: myFont;
-    padding-bottom: 2.3rem;
+    padding-bottom: 2rem;
     color: #6d3200;
     transition: all 5s;
     font-size: 3rem !important;
@@ -1855,7 +1855,7 @@ transform: scale(1.5);
         margin-bottom: 10px;
     }
 
-    .menu-title {
+    .header-title {
        margin-top: 1rem;
     }
 
@@ -1939,7 +1939,7 @@ transform: scale(1.5);
     .bread img{
         animation: bounceIn linear;
         animation-timeline: view();
-        animation-range: entry 20% cover 50%;
+        animation-range: entry 0% cover 50%;
         animation-delay: 5s;
       }
 

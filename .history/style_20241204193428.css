@@ -571,7 +571,7 @@ html {
 /* Menu Page */
 .menu-title {
     font-family: myFont;
-    padding-bottom: 2.3rem;
+    padding-bottom: 2rem;
     color: #6d3200;
     transition: all 5s;
     font-size: 3rem !important;
