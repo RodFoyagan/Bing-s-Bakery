@@ -1590,7 +1590,7 @@ transform: scale(1.5);
     }
 
     .about-images img {
-        height: 340px;
+        height: 400px;
         width: 280px;
     }
 
@@ -1919,8 +1919,6 @@ transform: scale(1.5);
     }
 
     .about-images img {
-        width: 280px;
-    height: 400px;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -1940,7 +1938,7 @@ transform: scale(1.5);
     .about-details {
         animation: bounceIn linear;
         animation-timeline: view();
-        animation-range: entry 0% cover 20%;
+        animation-range: entry 0% cover 30%;
         animation-delay: 5s;
       }
 
