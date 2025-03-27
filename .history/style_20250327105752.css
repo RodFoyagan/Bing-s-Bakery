@@ -203,8 +203,6 @@
     position: absolute; /* Positioning to stack correctly */
     z-index: 99 !important;
     margin-top: -5px;
-    height: 2.5rem;
-    width: 2.5rem;
   }
   .food-price{
     font-weight: 500;
@@ -1398,11 +1396,11 @@ transform: scale(1.5);
 #cart-close{
   position: absolute;
   top: 1rem;
-  right: 2.5rem;
+  right: 0.8rem;
   font-size: 2rem;
   cursor: pointer;
-  height: 2rem;
-  width: 2rem;
+  height: 1rem;
+  width: 1rem;
 }
 /* Cart section */
 

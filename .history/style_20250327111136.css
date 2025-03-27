@@ -205,6 +205,7 @@
     margin-top: -5px;
     height: 2.5rem;
     width: 2.5rem;
+    color
   }
   .food-price{
     font-weight: 500;
@@ -1398,7 +1399,7 @@ transform: scale(1.5);
 #cart-close{
   position: absolute;
   top: 1rem;
-  right: 2.5rem;
+  right: 3rem;
   font-size: 2rem;
   cursor: pointer;
   height: 2rem;

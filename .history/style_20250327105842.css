@@ -203,8 +203,6 @@
     position: absolute; /* Positioning to stack correctly */
     z-index: 99 !important;
     margin-top: -5px;
-    height: 2.5rem;
-    width: 2.5rem;
   }
   .food-price{
     font-weight: 500;

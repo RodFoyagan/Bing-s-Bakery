@@ -1398,7 +1398,7 @@ transform: scale(1.5);
 #cart-close{
   position: absolute;
   top: 1rem;
-  right: 2.5rem;
+  right: 3rem;
   font-size: 2rem;
   cursor: pointer;
   height: 2rem;
