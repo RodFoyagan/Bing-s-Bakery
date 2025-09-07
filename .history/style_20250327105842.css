@@ -49,19 +49,16 @@
     }
 }
 
+/* cart Form start */
+/* General Styling for Cart Form Inputs */
+
 .cart-form {
     padding: 8px 6px;
     border-width: 1px;
     border-style: solid;
     border-color: #6d3200;
     border-radius: 5px;
-}
-
-.navbar__menu {
-    margin: 0 auto;
-    display: flex;
-    gap: clamp(0rem, -3vw, 2rem);
-
+    /* box-shadow: 0 9px 12px #434242; */
 }
 
 .note {
@@ -139,6 +136,7 @@
 
 /* Button Styling */
 .btn-buy {
+    padding: 12px 20px;
     background-color: #8b5220;
     color: #fff;
     border: none;
@@ -205,8 +203,6 @@
     position: absolute; /* Positioning to stack correctly */
     z-index: 99 !important;
     margin-top: -5px;
-    height: 2.5rem;
-    width: 2.5rem;
   }
   .food-price{
     font-weight: 500;
@@ -376,7 +372,6 @@ html {
     cursor: pointer;
     text-decoration: none;
     margin-top: -3px;
-
 }
 
 .fa-gem {
@@ -461,7 +456,7 @@ html {
 
 .second-button button a {
     /* position: relative; */
-    font-size: 1.6vw;
+    font-size: 2.6vw;
     text-decoration: none;
 }
 
@@ -476,8 +471,8 @@ html {
     background: transparent;
     margin-top: 2.8rem;
     margin-left: 25%;
-    font-weight: 500;
-    font-size: 1.8rem;
+    font-weight: 700;
+    font-size: 2rem;
     color: #eec07b;
     height: 3.8rem;
     transition: all 0.8s ease;
@@ -515,7 +510,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 92vh;
+    height: 500px;
 }
 
 @font-face {
@@ -525,7 +520,7 @@ html {
 
 .first-page h2 {
     display: flex;
-    margin-left: 11%;
+    margin-left: 18%;
     width: 550px;
     min-width: 450px;
     max-width: 300px;
@@ -538,14 +533,14 @@ html {
     font-size: 5vw;
     font-weight: 200;
     text-align: center;
-    padding-top: 16rem;
+    padding-top: 4rem;
     text-align: left;
-    line-height: 5rem;
+    line-height: 4rem;
 }
 
 .first-page p {
     display: flex;
-    margin-left: 35%;
+    margin-left: 32%;
     margin-top: -2.2rem;
     font-family: myFont1;
     font-size: 1.5vw;
@@ -586,14 +581,13 @@ html {
 .body {
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
+    width: 100%;
     min-width: 380px;
     gap: 2rem;
     column-gap: 2rem;
     justify-content: center;
     align-items: center;
     padding-bottom: 3rem;
-    margin: 0 auto;
 }
 
 .bread {
@@ -1202,25 +1196,22 @@ header{
     display: flex;
   position: absolute;
   background-color: red;
-  top: -13px;
+  top: -15px;
+  right: -15px;
   padding: 1px;
   height: 20px;
   width: 20px;
   line-height:20px ;
   border-radius: 50%;
-  z-index: 100;
+  z-index: 99;
   font-size: 12px;
   justify-content: center;
   align-items: center;
-  right: clamp(1em, 8vw, 12.5em);
 }
 
-#cart-icon {
+#cart-icon{
   font-size: 2.5rem;
   cursor: pointer;
-  position: absolute;
-  display: flex;
-  right: clamp(-9%, 8vw, 5em);
 }
 
 img{
@@ -1411,6 +1402,8 @@ transform: scale(1.5);
   height: 2rem;
   width: 2rem;
 }
+/* Cart section */
+
 @media (hover: none) {
     .bread-body {
         width: 100%;
@@ -1591,9 +1584,9 @@ transform: scale(1.5);
         color: #332400;
     }
 
-    /* .second-button {
-        margin-top: 5rem;
-    } */
+    .second-button {
+        margin-top: 3rem;
+    }
 
     .contact-details {
         width: 289px;
@@ -1664,13 +1657,7 @@ transform: scale(1.5);
 }
 
 @media screen and (max-width: 735px) {
-
-    .first-page {
-        height: 100vh;
-    }
     .first-page h2 {
-        margin-top: -8rem;
-        margin-left: 20%;
         align-items: center;
         justify-content: center;
         text-align: left;
@@ -1716,15 +1703,6 @@ transform: scale(1.5);
 
 @media (max-width: 480px) {
     
-    #cart-close{
-        position: absolute;
-        top: 1rem;
-        right: 2.5rem;
-        font-size: 2rem;
-        cursor: pointer;
-        height: 2rem;
-        width: 2rem;
-      }
 
       .exclamation {
         display: none;
@@ -1770,7 +1748,7 @@ transform: scale(1.5);
     }
 
     .second-button {
-        padding-top: 2rem;
+        padding-top: 4rem;
         justify-content: center;
         align-items: center;
 
@@ -1819,9 +1797,9 @@ transform: scale(1.5);
         color: #332400;
     }
 
-    /* .second-button {
+    .second-button {
         margin: 0 auto;
-    } */
+    }
 
     #contact-us {
         width: 10rem;
